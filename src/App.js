@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
+import Navbar from './components/Navbar';
 
 
 const App = () => {
@@ -7,7 +8,7 @@ const App = () => {
   <div>
       <div className='app'>
           <div className='navbar'>
-
+            <Navbar />
           </div>
           <div className='main'>
               
