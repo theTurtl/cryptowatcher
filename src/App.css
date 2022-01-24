@@ -151,15 +151,16 @@ table {
 
 .navView {
   position: absolute;
-  top: 0;
-  bottom: 0;
+  top: 64px;
+  bottom: 64px;
   width: 128px;
-  background-color: #3772ff;
+  background-image: linear-gradient(120deg, #3772ff, #6160cd);
   margin: 32px;
   border-radius: 4px;
 }
 
 .navbarLogo {
+  position: absolute;
   background-image: url(./images/testLogo.svg);
   background-size: contain;
   background-repeat: no-repeat;
@@ -172,17 +173,16 @@ table {
 
 .navContentView {
   position: relative;
-  height: 50%;
-  background-color: #e6e8e625;
+  height: 100%;
+  background-color: #e6e8e600;
+  min-height: 512px;
 }
 
 .navIcons {
   position: absolute;
   top: 50%;
   width: 100%;
-  padding: 32px 0px;
-  margin-top: -90px;
-  background-color: #3772ff;
+  margin-top: -150px;
 }
 
 .homeIcon {
@@ -203,6 +203,7 @@ table {
   width: 100%;
   height: 26px;
   margin: 32px 0px;
+  opacity: 0.8;
 }
 
 .exchangeIcon {
@@ -213,4 +214,47 @@ table {
   width: 100%;
   height: 26px;
   margin: 32px 0px;
+  opacity: 0.8;
+}
+
+.newsIcon {
+  background-image: url("./images/newsIcon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 100%;
+  height: 26px;
+  margin: 32px 0px;
+  opacity: 0.8;
+}
+
+.settingIcon {
+  position: absolute;
+  background-image: url("./images/settingIcon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 100%;
+  height: 26px;
+  margin: 64px 0px;
+  bottom: 0;
+}
+
+.navSelection {
+  background-color: #08070820;
+  padding: 1px;
+  margin: 0 16px;
+  border-radius: 32px;
+}
+
+/*--------------- profileView -----------------*/
+
+.profileView {
+  position: absolute;
+  right: 0;
+  margin: 64px;
+  width: 264px;
+  height: 80px;
+  border-radius: 16px;
+  background-image: linear-gradient(120deg, #3772ff, #6160cd);
 }

@@ -7,12 +7,17 @@ const Navbar = () => {
     <div className='navContentView'>
 
         <div className='navIcons'>
-            <div className='homeIcon'></div>
+            <div className='navSelection'>
+                <div className='homeIcon'></div>
+            </div>
+            
             <div className='currenciesIcon'></div>
             <div className='exchangeIcon'></div>
-            <div classNAme='newsIcon'></div>
+            <div className='newsIcon'></div>
         </div>
+        <div className='settingIcon'></div>
     </div>
+    
   </div>);
 };
 
