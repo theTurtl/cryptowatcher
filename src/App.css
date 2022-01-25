@@ -159,6 +159,7 @@ table {
   width: 100%;
   flex: 100%;
   background-color: #e6e8e6;
+  margin-top: 80px;
 }
 
 /*---------------- navBar -----------------*/
@@ -304,7 +305,6 @@ table {
 .homePageLayout {
   width: 1128px;
   margin: auto;
-  margin-top: 64px;
 }
 
 .homeView {
