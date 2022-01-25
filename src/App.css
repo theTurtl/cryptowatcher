@@ -147,19 +147,17 @@ table {
 }
 
 .navbar {
-  position: relative;
+  position: fixed;
   width: 180px;
   height: 100vh;
-
   z-index: 2;
 }
 
 .main {
   position: absolute;
   width: 100%;
-  flex: 100%;
   background-color: #e6e8e6;
-  margin-top: 80px;
+  padding-top: 80px;
 }
 
 /*---------------- navBar -----------------*/
@@ -265,7 +263,7 @@ table {
 /*--------------- profileView -----------------*/
 
 .profileView {
-  position: absolute;
+  position: fixed;
   right: 0;
   margin: 64px;
   height: 80px;
@@ -310,11 +308,12 @@ table {
 .homeView {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   grid-gap: 8px;
 }
 
 .globalStats {
-  flex: 43%;
+  flex: 42%;
   height: 384px;
   background-color: #d5d8d5;
   border-radius: 6px;
@@ -384,7 +383,7 @@ table {
 
 .moversCard {
   width: 178px;
-  height: 96px;
+  height: 104px;
   background-color: #f5f7f1;
 }
 
@@ -450,4 +449,133 @@ table {
   font-weight: 200;
   opacity: 0.75;
   margin-left: 8px;
+}
+
+.totalMarketCap {
+  width: 100%;
+  background-color: #d5d8d5;
+  border-radius: 6px;
+}
+
+.marketCapTitle {
+  font-family: "Open Sans", sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  margin: 48px;
+}
+
+.chartView {
+  background-color: #e6e8e6;
+  margin: 8px;
+  border-radius: 6px;
+}
+
+.chartNavLine {
+  width: 100%;
+}
+
+.chartNavContent {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 28px 48px;
+}
+
+.chartNavLeft {
+  display: flex;
+  float: left;
+}
+
+.valutaType {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #080708;
+  opacity: 0.75;
+  margin-right: 4px;
+}
+
+.totalMarketValue {
+  font-family: "Open Sans", sans-serif;
+  font-size: 32px;
+  font-weight: 100;
+  color: #080708;
+  opacity: 1;
+}
+
+.marketCapProsent {
+  padding-right: 16px;
+  height: 32px;
+  background-color: #00a72a;
+  border-radius: 32px;
+  display: flex;
+  float: right;
+  right: 0;
+  margin-left: 16px;
+}
+
+.marketCapProsent p {
+  height: 100%;
+  font-family: "Open Sans", sans-serif;
+  line-height: 32px;
+  text-align: left;
+  color: #f5f7f1;
+}
+
+.chartNavRight {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 0;
+  padding: 0px 48px;
+  gap: 4px;
+}
+
+.chartTimeframe {
+  width: 48px;
+  height: 28px;
+  border-radius: 6px;
+  background-color: #d5d8d5;
+  text-align: center;
+  line-height: 1.8;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #08070899;
+}
+
+.marketChart {
+  background-image: url("./images/chartDefault.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 200px;
+}
+
+.newsView {
+  width: 100%;
+  background-color: #d5d8d5;
+  border-radius: 6px;
+}
+
+.newsTitle {
+  font-family: "Open Sans", sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  margin: 48px;
+}
+
+.newsCardView {
+  margin: 48px;
+  background-color: aqua;
+}
+
+.newsCard {
+  width: 352px;
+  height: 128px;
+  background-color: #080708;
+}
+
+.upperPart {
 }

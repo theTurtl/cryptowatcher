@@ -57,6 +57,55 @@ const Homepage = () => {
           </div>
         </div>
 
+        <div className='totalMarketCap'>
+          <p className='marketCapTitle'>Total Market Cap.</p>
+          <div className='chartView'>
+            <div className='chartNavLine'>
+              <div className='chartNavContent'>
+
+                <div className='chartNavLeft'>
+                  <p className='valutaType'>USD</p>
+                  <p className='totalMarketValue'>1.659 Trillion</p>
+                  <div className='marketCapProsent'>
+                    <div className='negativeOrPositive'></div>
+                    <p>19.7%</p>
+                  </div>
+                </div>
+                
+                <div className='chartNavRight'>
+                  <div className='chartTimeframe'>1H</div>
+                  <div className='chartTimeframe'>1D</div>
+                  <div className='chartTimeframe'>1W</div>
+                  <div className='chartTimeframe'>1M</div>
+                  <div className='chartTimeframe'>1Y</div>
+                  <div className='chartTimeframe'>ALL</div>
+                </div>
+
+              </div>
+            </div>
+            <div className='marketChart'></div>
+          </div>
+        </div>
+
+        <div className='newsView'>
+          <p className='newsTitle'>News.</p>
+          <div className='newsCardView'>
+            
+            <div className='newsCard'>
+              <div className='upperPart'>
+                <p className='cardTitle'>Bitcoin Magazine</p>
+                <p className='timeSince'>6 hours ago</p>
+                <div className='newsCryptoId'>BTC</div>
+              </div>
+              <div className='newsDescription'>
+                <p className='newsText'>U.S. Real Estate Company Harbor To Accept Bitcoin</p>
+              </div>
+              
+
+            </div>
+          </div>
+        </div>
+
       </div>
   </div>);
 };
