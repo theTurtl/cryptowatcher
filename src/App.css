@@ -158,6 +158,7 @@ table {
   width: 100%;
   background-color: #e6e8e6;
   padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 /*---------------- navBar -----------------*/
@@ -567,15 +568,62 @@ table {
 }
 
 .newsCardView {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
   margin: 48px;
-  background-color: aqua;
 }
 
 .newsCard {
-  width: 352px;
-  height: 128px;
+  width: 336px;
+  height: 144px;
   background-color: #080708;
 }
 
 .upperPart {
+  position: relative;
+  padding: 22px;
+}
+
+.cardTitle {
+  color: #d5d8d5;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.timeSince {
+  color: #d5d8d5;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  margin-top: 4px;
+  opacity: 0.5;
+}
+
+.newsCryptoId {
+  position: absolute;
+  width: 50px;
+  height: 28px;
+  background-color: #fdca40;
+  top: 0;
+  right: 0;
+  margin: 22px;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.8;
+  color: #080708;
+}
+
+.newsDescription {
+  padding: 0px 22px 22px 22px;
+}
+
+.newsText {
+  color: #d5d8d5;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 1.3;
 }

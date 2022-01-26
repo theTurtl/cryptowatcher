@@ -1,4 +1,5 @@
 import React from 'react';
+import NewsCard from './NewsCard';
 import TopMoversCard from './TopMoversCard';
 
 const Homepage = () => {
@@ -100,9 +101,31 @@ const Homepage = () => {
               <div className='newsDescription'>
                 <p className='newsText'>U.S. Real Estate Company Harbor To Accept Bitcoin</p>
               </div>
-              
-
             </div>
+
+            <NewsCard newsSource="test1" timePublished="test2" newsDescription="test3" cryptoId="BTC" />
+            <NewsCard newsSource="Bitcoin Magazine" 
+                timePublished="6 hours ago" 
+                newsDescription="U.S. Real Estate Company Harbor To Accept Bitcoin" 
+                cryptoId={"BTC"} />
+
+            <NewsCard newsSource="Bitcoin Magazine" 
+                            timePublished="6 hours ago" 
+                            newsDescription="U.S. Real Estate Company Harbor To Accept Bitcoin" 
+                            cryptoId={"BTC"} />
+
+            <NewsCard newsSource="Bitcoin Magazine" 
+                            timePublished="6 hours ago" 
+                            newsDescription="U.S. Real Estate Company Harbor To Accept Bitcoin" 
+                            cryptoId={"BTC"} />
+
+            <NewsCard newsSource="Bitcoin Magazine" 
+                            timePublished="6 hours ago" 
+                            newsDescription="U.S. Real Estate Company Harbor To Accept Bitcoin" 
+                            cryptoId={"BTC"} />
+
+
+
           </div>
         </div>
 
