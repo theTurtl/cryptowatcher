@@ -30,10 +30,23 @@ const App = () => {
                 </Routes>
               </div>
             
+            <div className='footer'>
+              <div className='logo'></div>
+              <div className='footerNav'>
+                <div className='rightsReserved'>
+                  olook.com<br/>All rights reserved
+                </div>
+                <div className='footerNavView'>
+                  <Link to="/"><p className='footerNavLink'>Home</p></Link>
+                  <div className='divider'></div>
+                  <Link to="/exchanges"><p className='footerNavLink'>Exchanges</p></Link>
+                  <div className='divider'></div>
+                  <Link to="/news"><p className='footerNavLink'>News</p></Link>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className='footer'>
-
-          </div>
+          
       </div>
   </div>)
   ;

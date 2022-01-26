@@ -143,7 +143,7 @@ table {
 .app {
   display: flex;
   flex-direction: row;
-  background-color: #e6e8e6;
+  background-color: #f0f1f0;
 }
 
 .navbar {
@@ -156,9 +156,8 @@ table {
 .main {
   position: absolute;
   width: 100%;
-  background-color: #e6e8e6;
+  background-color: #f0f1f0;
   padding-top: 80px;
-  padding-bottom: 80px;
 }
 
 /*---------------- navBar -----------------*/
@@ -259,6 +258,69 @@ table {
   padding: 1px;
   margin: 0 16px;
   border-radius: 32px;
+}
+
+/*------------------ Footer -------------------*/
+
+.footer {
+  position: relative;
+  height: 156px;
+  width: 100%;
+  background-color: #d5d8d5;
+  bottom: 0;
+
+  margin-top: 128px;
+  display: flex;
+}
+
+.footerNav {
+  margin: auto;
+  width: max-content;
+  text-align: center;
+  align-items: center;
+  font-family: "Open Source", sans-serif;
+}
+
+.footerNavView {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  margin-top: 8px;
+  width: max-content;
+}
+
+.footerNavLink {
+  margin-top: 4px;
+  font-weight: 600;
+  color: #3772ff;
+}
+
+.divider {
+  height: 24px;
+  width: 2px;
+  background-color: #080708;
+  margin: 0px 12px;
+}
+
+.rightsReserved {
+  font-weight: 600;
+  opacity: 0.4;
+}
+
+.logo {
+  position: absolute;
+  background-image: url("./images/logoTest.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 64px;
+  width: 200px;
+  margin: 80px 0px 16px 16px;
+  opacity: 0.5;
+}
+
+.profileFooter {
+  position: relative;
 }
 
 /*--------------- profileView -----------------*/
