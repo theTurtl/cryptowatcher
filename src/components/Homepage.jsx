@@ -1,6 +1,9 @@
 import React from 'react';
 import NewsCard from './NewsCard';
 import TopMoversCard from './TopMoversCard';
+import millify from 'millify';
+import { Link } from 'react-router-dom';
+import GlobalStatViewer from './GlobalStatViewer';
 
 const Homepage = () => {
   return (
@@ -11,31 +14,12 @@ const Homepage = () => {
           <div className='globalContent'>
             <p className='globalTitle'>Global.</p>
             <div className='globalStatsContent'>
-
-              <div className='globalStatsInfoBox'>
-                <p className='globalDescriptionTitle'>Total Currencies</p>
-                <p className='globalDescription'>12 176</p>
-              </div>
-
-              <div className='globalStatsInfoBox'>
-                <p className='globalDescriptionTitle'>Total Exchanges</p>
-                <p className='globalDescription'>373</p>
-              </div>
-
-              <div className='globalStatsInfoBox'>
-                <p className='globalDescriptionTitle'>Total Markets</p>
-                <p className='globalDescription'>373</p>
-              </div>
-
-              <div className='globalStatsInfoBox'>
-                <p className='globalDescriptionTitle'>Total <br/>Market Cap</p>
-                <p className='globalDescription'>$2.4T</p>
-              </div>
-
-              <div className='globalStatsInfoBox'>
-                <p className='globalDescriptionTitle'>Total 24h Volume</p>
-                <p className='globalDescription'>$92.3B</p>
-              </div>
+              
+              <GlobalStatViewer title="Total Currencies" value="12 176"/>
+              <GlobalStatViewer title="Total Exchanges" value="373"/>
+              <GlobalStatViewer title="Total Markets" value="373"/>
+              <GlobalStatViewer title="Total Market Cap" value="$2.4T"/>
+              <GlobalStatViewer title="Total 24h Volume" value="$92.3B"/>
 
             </div>
           </div>
