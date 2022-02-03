@@ -1,17 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const TopMoversCard = () => {
+const TopMoversCard = ({title, price, prosentChange}) => {
+
+  const [prosentType, setProsentType] = useState('negativeProsent');
+
+  if(parseFloat(prosentChange) > 0) {
+    setProsentType = 'negativeOrProsent';
+  }
+
+  
+
   return (
     <div className='moversCard'>
     <div className='moversCardContent'>
-      <div className='moversCryptoIcon'></div>
+      <div className='moversCryptoIcon'>
+    
+      </div>
       <div className='moversProsent'>
-        <div className='negativeOrPositive'></div>
-        <p>19.7%</p>
+        <div className={prosentType}></div>
+        <p>{prosentChange}</p>
       </div>
       <div className='moversDescription'>
-        <p className='moversName'>BTC</p>
-        <p className="moversValue">$48.6K</p>
+        <p className='moversName'>{title}</p>
+        <p className="moversValue">{price}</p>
       </div>
     </div>
   </div>

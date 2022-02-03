@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NewsCard from './NewsCard';
 import TopMoversCard from './TopMoversCard';
 import millify from 'millify';
@@ -10,14 +10,12 @@ import { useGetCryptosQuery } from '../services/cryptoApi';
 
 const Homepage = () => {
   const { data, isFetching} = useGetCryptosQuery();
-
   const globalStats = data?.data?.stats;
+  const [cryptos, setCryptos ]= useState(data?.data?.coins);
 
+  if(isFetching) return 'Loading...';  
 
-  if(isFetching) return 'Loading...';
-
-  const totalMarketCap = "$" + millify(globalStats.totalMarketCap);
-  const total24hVolume = "$" + millify(globalStats.total24hVolume);
+  console.log(cryptos);
 
   return (
   <div className='homePageLayout'>
@@ -28,23 +26,24 @@ const Homepage = () => {
             <p className='globalTitle'>Global.</p>
             <div className='globalStatsContent'>
               
+
               <GlobalStatViewer title="Total Currencies" value={millify(globalStats.total)}/>
               <GlobalStatViewer title="Total Exchanges" value={globalStats.totalExchanges}/>
               <GlobalStatViewer title="Total Markets" value={millify(globalStats.totalMarkets)}/>
-              <GlobalStatViewer title="Total Market Cap" value={totalMarketCap}/>
-              <GlobalStatViewer title="Total 24h Volume" value={total24hVolume}/>
+              <GlobalStatViewer title="Total Market Cap" value={"$" + millify(globalStats.totalMarketCap)}/>
+              <GlobalStatViewer title="Total 24h Volume" value={"$" + millify(globalStats.total24hVolume)}/>
 
             </div>
           </div>
           
         </div>
-
+        
         <div className='topMovers'>
           <div className='topMoversView'>
             <p className='topMoversTitle'>Top Movers.</p>
             <div className='topMoversContainer'>
 
-              <TopMoversCard />
+              <TopMoversCard title={cryptos[0].symbol} price={"$" + millify(cryptos[0].price)} prosentChange={cryptos[0].change}/>
               <TopMoversCard />
               <TopMoversCard />
               <TopMoversCard />
