@@ -4,8 +4,21 @@ import TopMoversCard from './TopMoversCard';
 import millify from 'millify';
 import { Link } from 'react-router-dom';
 import GlobalStatViewer from './GlobalStatViewer';
+import { useGetCryptosQuery } from '../services/cryptoApi';
+
+
 
 const Homepage = () => {
+  const { data, isFetching} = useGetCryptosQuery();
+
+  const globalStats = data?.data?.stats;
+
+
+  if(isFetching) return 'Loading...';
+
+  const totalMarketCap = "$" + millify(globalStats.totalMarketCap);
+  const total24hVolume = "$" + millify(globalStats.total24hVolume);
+
   return (
   <div className='homePageLayout'>
       <div className='homeView'>
@@ -15,11 +28,11 @@ const Homepage = () => {
             <p className='globalTitle'>Global.</p>
             <div className='globalStatsContent'>
               
-              <GlobalStatViewer title="Total Currencies" value="12 176"/>
-              <GlobalStatViewer title="Total Exchanges" value="373"/>
-              <GlobalStatViewer title="Total Markets" value="373"/>
-              <GlobalStatViewer title="Total Market Cap" value="$2.4T"/>
-              <GlobalStatViewer title="Total 24h Volume" value="$92.3B"/>
+              <GlobalStatViewer title="Total Currencies" value={millify(globalStats.total)}/>
+              <GlobalStatViewer title="Total Exchanges" value={globalStats.totalExchanges}/>
+              <GlobalStatViewer title="Total Markets" value={millify(globalStats.totalMarkets)}/>
+              <GlobalStatViewer title="Total Market Cap" value={totalMarketCap}/>
+              <GlobalStatViewer title="Total 24h Volume" value={total24hVolume}/>
 
             </div>
           </div>
