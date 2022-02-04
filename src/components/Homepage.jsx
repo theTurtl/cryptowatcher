@@ -5,6 +5,7 @@ import millify from 'millify';
 import { Link } from 'react-router-dom';
 import GlobalStatViewer from './GlobalStatViewer';
 import { useGetCryptosQuery } from '../services/cryptoApi';
+import { useGetCryptoNewsQuery } from '../services/cryptoNewsApi';
 
 
 
@@ -13,11 +14,14 @@ const Homepage = () => {
   const globalStats = data?.data?.stats;
   const [cryptos, setCryptos ]= useState(data?.data?.coins);
 
+  const {data: cryptoNews} = useGetCryptoNewsQuery({newsCategory: 'Cryptocurrency', count: 1})
+  const newsArticle = cryptoNews?.value;
+
   if(isFetching) return 'Loading...';  
 
-  console.log(cryptos);
-  console.log(cryptos.slice(0, 6));
-  console.log(cryptos[0].price);
+  console.log(cryptoNews);
+  console.log(cryptoNews[0]);
+
 
   return (
   <div className='homePageLayout'>
@@ -100,29 +104,13 @@ const Homepage = () => {
               </div>
             </div>
 
-            <NewsCard newsSource="test1" timePublished="test2" newsDescription="test3" cryptoId="BTC" />
-            <NewsCard newsSource="Bitcoin Magazine" 
-                timePublished="6 hours ago" 
-                newsDescription="U.S. Real Estate Company Harbor To Accept Bitcoin" 
-                cryptoId={"BTC"} />
-
-            <NewsCard newsSource="Bitcoin Magazine" 
-                            timePublished="6 hours ago" 
-                            newsDescription="U.S. Real Estate Company Harbor To Accept Bitcoin" 
-                            cryptoId={"BTC"} />
-
-            <NewsCard newsSource="Bitcoin Magazine" 
-                            timePublished="6 hours ago" 
-                            newsDescription="U.S. Real Estate Company Harbor To Accept Bitcoin" 
-                            cryptoId={"BTC"} />
-
-            <NewsCard newsSource="Bitcoin Magazine" 
-                            timePublished="6 hours ago" 
-                            newsDescription="U.S. Real Estate Company Harbor To Accept Bitcoin" 
-                            cryptoId={"BTC"} />
-
-
-
+            {newsArticle.map((news) => (
+              <NewsCard 
+              newsSource={news.provider[0].name}
+              timePublished={news.datePublished} 
+              newsDescription={news.name} 
+              />
+            ))}
           </div>
         </div>
 
