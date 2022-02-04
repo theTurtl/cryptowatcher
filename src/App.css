@@ -459,7 +459,7 @@ table {
 }
 
 .moversCryptoIcon {
-  background-image: url("./images/cryptoIconTest.svg");
+  background-image: linear-gradient(0deg, #000000, #666666);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;

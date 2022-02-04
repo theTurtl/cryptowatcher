@@ -16,6 +16,8 @@ const Homepage = () => {
   if(isFetching) return 'Loading...';  
 
   console.log(cryptos);
+  console.log(cryptos.slice(0, 6));
+  console.log(cryptos[0].price);
 
   return (
   <div className='homePageLayout'>
@@ -25,8 +27,7 @@ const Homepage = () => {
           <div className='globalContent'>
             <p className='globalTitle'>Global.</p>
             <div className='globalStatsContent'>
-              
-
+      
               <GlobalStatViewer title="Total Currencies" value={millify(globalStats.total)}/>
               <GlobalStatViewer title="Total Exchanges" value={globalStats.totalExchanges}/>
               <GlobalStatViewer title="Total Markets" value={millify(globalStats.totalMarkets)}/>
@@ -42,14 +43,14 @@ const Homepage = () => {
           <div className='topMoversView'>
             <p className='topMoversTitle'>Top Movers.</p>
             <div className='topMoversContainer'>
-
-              <TopMoversCard title={cryptos[0].symbol} price={"$" + millify(cryptos[0].price)} prosentChange={cryptos[0].change}/>
-              <TopMoversCard />
-              <TopMoversCard />
-              <TopMoversCard />
-              <TopMoversCard />
-              <TopMoversCard />
-
+              {cryptos.slice(0,6).map( (cryptoCoin) => (
+                  <TopMoversCard 
+                    title={cryptoCoin.symbol} 
+                    price={"$" + millify(cryptoCoin.price)} 
+                    prosentChange={cryptoCoin.change}
+                    coinIcon={cryptoCoin.iconUrl}
+                    />
+                ))}
             </div>
           </div>
         </div>
